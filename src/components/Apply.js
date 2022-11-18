@@ -18,7 +18,7 @@ export default function Apply(){
                     </div>
                     <div className="">
                         <a href="https://1857586.my1003app.com/51796/register">
-                            <HiOutlineComputerDesktop size={60} style={{ justify-content: 'center', align-items: 'center'}} />
+                            <HiOutlineComputerDesktop size={60} />
                             <p className="text-center">Returning Applicants Click Here</p>
                         </a>
                     </div>

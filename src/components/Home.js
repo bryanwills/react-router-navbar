@@ -1,4 +1,5 @@
 import Highlights from './Highlights';
+import ContactForm from './ContactForm';
 
 export default function Home(){
     const image = require('./imgs/House.jpg');
@@ -12,6 +13,13 @@ export default function Home(){
                 </button>
             </div>
             <Highlights />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div className="border-red-500">
+                <ContactForm />
+            </div>
         </div>
     )
 }
