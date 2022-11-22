@@ -1,49 +1,44 @@
-import {HiOutlineComputerDesktop, HiPhoneArrowUpRight } from 'react-icons/hi2';
+// import {HiOutlineComputerDesktop, HiPhoneArrowUpRight } from 'react-icons/hi2';
+// import React, { Component } from 'react';
+// import { Wrapper, Status } from '@googlemaps/react-wrapper';
+// import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 import React, { Component } from 'react';
-import { Wrapper, Status } from '@googlemaps/react-wrapper';
-import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
+import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import Footer from './Footer';
+//         lat: 38.09491689247499,
+//         lng: -85.56812758161705
+// apiKey: ('AIzaSyDjsu1xi1USK7r4sTqcwYedWPIgiC--tf0')
 
+const containerStyle = {
+    width: '600px',
+    height: '400px'
+};
 
-// export default function Contact(){
-//     const map = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDjsu1xi1USK7r4sTqcwYedWPIgiC--tf0&callback=initMap&libraries=&v=weekly"
-//     return (
-//         <div className="mx-auto">
-//       <div class="address">
-//         Sparta Mortgage LLC <br />
-//         11037 Radleigh Lane <br />
-//         Louisville, KY 40291 <br />
-//         NMLS 1857586 and 51796 <br />
-//         nathan@spartamortgage.com <br />
-//         502.819.1739
-//       </div>
-//         </div>
-//     );
-// }
+const center = {
+    lat: 38.09491689247499,
+    lng: -85.56812758161705
+};
 
-class App extends Component {
-    render() {
-        const style = {
-            width: '600px',
-            height: '450px'
-        }
+function MyComponent() {
+    return (
+        <div>
+      <LoadScript
+        googleMapsApiKey="AIzaSyDjsu1xi1USK7r4sTqcwYedWPIgiC--tf0"
+      >
+        <GoogleMap
+          mapContainerStyle={containerStyle}
+          center={center}
+          zoom={15}
+        >
+          { /* Child components, such as markers, info windows, etc. */ }
+          <></>
+        </GoogleMap>
+      </LoadScript>
+        <div>
+            <Footer />
+        </div>
+      </div>
+    )
+  }
 
-        return(
-            <div className="App auto-mx align-center ">
-
-            <Map
-            google={this.props.google}
-            initialCenter={{
-            lat: 38.09491689247499,
-            lng: -85.56812758161705
-            }}
-            style={style}
-            />
-            <Marker/>
-            </div>
-        );
-    }
-}
-
-export default GoogleApiWrapper({
-    apiKey: ('AIzaSyDjsu1xi1USK7r4sTqcwYedWPIgiC--tf0')
-})(App);
+  export default React.memo(MyComponent)
